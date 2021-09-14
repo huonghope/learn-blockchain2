@@ -1,0 +1,1 @@
+ChainLink là cầu nối chuyển tiếp thông tin, dữ liệu từ thế giới thực vào Blockchain và ngược lại.
