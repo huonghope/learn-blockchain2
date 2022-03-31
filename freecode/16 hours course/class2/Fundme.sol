@@ -27,10 +27,8 @@ contract FundMe {
         require(getConversionRate(msg.value) >= mimimumUSD, "You dont have money, send more plesaes");
         
         // 1gwei < 50$
-        
         addressToAmountFunded[msg.sender] += msg.value;
         // what the ETH -> USD conversion rate
-        
         
         // Luu lai nhung nguoi da gui
         funders.push(msg.sender);
@@ -74,7 +72,6 @@ contract FundMe {
     function withdraw() payable onlyOwner public{
         // only want the contract admin/owner
         msg.sender.transfer(address(this).balance);
-        
         // Su dung vong lap For de gui cho tat ca cac smart contacts tim duoc 
         for(uint256 funderIndex = 0; funderIndex <= funders.length; funderIndex++){
             address funder = funders[funderIndex];
