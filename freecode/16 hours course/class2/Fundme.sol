@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >= 0.7.0;
-
 import "@chainlink/contracts/src/v0.7/interfaces/AggregatorV3Interface.sol";
 import "@chainlink/contracts/src/v0.7/vendor/SafeMathChainlink.sol";
 
@@ -17,7 +16,6 @@ contract FundMe {
     constructor() public{
         owner = msg.sender;
     }    
-    
     
     // Cong them tien vao cho vi dia chi kia
     // Key chinh la dia chi cua vi
