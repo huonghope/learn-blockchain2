@@ -16,14 +16,15 @@ def test_deploy():
 def test_update_stogare():
   # arrange
   account = accounts[0]
-  print(account)
+  #print(account)
   # simple from account 0
   simple_storage = SimpleStorage.deploy({"from": account})
 
   #Act
   expected = 15
   simple_storage.store(expected,  {"from": account })
-
+  # Cha su ket qua la 5 de xem test co dung khong
   assert 5 == simple_storage.retrieve()
+
 def main():
   test_deploy()

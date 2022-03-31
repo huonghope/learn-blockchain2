@@ -14,10 +14,11 @@ contract StorageFactory is SimpleStorage{
         SimpleStorage simpleStorage = new SimpleStorage();
         simpleStorageArray.push(simpleStorage);
     }
+    
     // add simpleStorage
     function sfStore(uint256 _simpleStorageIndex, uint256 _simpleStorageNUmber) public {
         //Addrress
-        
+
         // ABI
         // co the rut ngan code
         SimpleStorage simpleStorage = SimpleStorage(address(simpleStorageArray[_simpleStorageIndex]));

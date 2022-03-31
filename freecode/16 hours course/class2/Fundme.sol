@@ -46,13 +46,13 @@ contract FundMe {
     
     // return current price Eth => USD
     function getPrice() public view returns(uint256){
-         AggregatorV3Interface priceFeed = AggregatorV3Interface(0xcf0f51ca2cDAecb464eeE4227f5295F2384F84ED);
-         (  uint80 roundId,
-          int256 answer,
-          uint256 startedAt,
-          uint256 updatedAt,
-          uint80 answeredInRound
-          ) = priceFeed.latestRoundData();
+            AggregatorV3Interface priceFeed = AggregatorV3Interface(0xcf0f51ca2cDAecb464eeE4227f5295F2384F84ED);
+            (  uint80 roundId,
+            int256 answer,
+            uint256 startedAt,
+            uint256 updatedAt,
+            uint80 answeredInRound
+            ) = priceFeed.latestRoundData();
           //4,083.2682427
          return uint256(answer * 100000000);
     }
@@ -65,8 +65,8 @@ contract FundMe {
     }
     
     modifier onlyOwner(){
-          require (msg.sender == owner, "Dont can transfer");
-          _;
+        require (msg.sender == owner, "Dont can transfer");
+        _;
     }
     
     // Vi Balance
@@ -77,8 +77,7 @@ contract FundMe {
         // only want the contract admin/owner
         msg.sender.transfer(address(this).balance);
         
-        
-        // Su dung vong lap For de gui cho tat ca cac smarttracts tim duoc 
+        // Su dung vong lap For de gui cho tat ca cac smart contacts tim duoc 
         for(uint256 funderIndex = 0; funderIndex <= funders.length; funderIndex++){
             address funder = funders[funderIndex];
             addressToAmountFunded[funder] = 0; //default address funder = 0

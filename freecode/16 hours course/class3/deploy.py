@@ -76,7 +76,7 @@ print("Deployed")
 simple_storage = w3.eth.contract(address=tx_receipt.contractAddress, abi=abi)
 # Call -> Simulate making the call and getting a return
 # Transact -> Acctually make a state change
-print(simple_storage.functions.store(17).call()) # return farivoteNumber Se khong co hieu luc -> Phai tao 1 transaction // se khong contract nao duoc tao ra
+print(simple_storage.functions.store(17).call()) # return farivoteNumber Se khong co hieu luc -> Phai tao 1 transaction // se khong contract nao duoc tao ra 
 print(simple_storage.functions.retrieve().call()) #check ini value
 
 print("Updating Contract....")

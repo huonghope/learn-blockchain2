@@ -4,8 +4,8 @@ contract Token {
 
   // values
   uint public totalSupply = 10000 * 10 ** 18;
-  string public name = "Test Token";
-  string public symbol = "TTK";
+  string public name = "PLASS COIN";
+  string public symbol = "PLC";
 
   // mappping
   mapping(address => uint) balances;

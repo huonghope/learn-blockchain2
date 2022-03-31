@@ -1,4 +1,4 @@
-from brownie import accounts, config, SimpleStorage
+from brownie import accounts, config, SimpleStorage, network
 
 # get account listb
 # get selected account
@@ -8,7 +8,9 @@ def deploy_simple_storage():
     # account = accounts.add(os.getenv("PRIVATE_KEY"))
     #account = accounts.add(config["wallets"]["from_key"])
     #print(account)
-    account = accounts[0]
+    #account = accounts[0] #mac dinh neu chay brownie khong network
+
+    account = get_account()
     #deloy from account 1
     simple_storage = SimpleStorage.deploy({"from": account})
     #Transts
@@ -22,5 +24,14 @@ def deploy_simple_storage():
     updated_stored_value = simple_storage.retrieve()
     print(updated_stored_value)
 
+def get_account():
+    # Them bien moi truong de nhan viet env
+    # Neu la dev thi xuat ra account cua Metamask
+    # Neu khong thi lay account tren fu
+    if(network.show_active() == 'development'):
+        return accounts[0]
+    else:
+        # add account
+        return accounts.add(config["wallets"]["from_key"])
 def main():
     deploy_simple_storage()
